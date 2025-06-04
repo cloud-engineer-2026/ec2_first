@@ -13,7 +13,6 @@ variable "region_name" {
   type        = string
 }
 variable "key_name" {
-  key-name    = "Docker"
   type        = string
   description = "KeyPair used by EC2"
   
@@ -21,7 +20,7 @@ variable "key_name" {
 
 variable "keypair_path" {
   type        = string
-  default     = "F:\\CloudEngineer2026\\moses\\my-ec2-key.pem"
+  default     = "F:\\CloudEngineer2026\\moses\\Docker.pem"
   description = "KeyPair downloaded path"
 }
 
