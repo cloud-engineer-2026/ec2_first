@@ -1,5 +1,5 @@
 resource "aws_key_pair" "jenkins_keypair" {
-  key_name   = Docker.pem
+  key_name   = var.key_name
   public_key = tls_private_key.private_key.public_key_openssh
 
   # Download keypair pem file to keypair path on local
