@@ -8,7 +8,7 @@ resource "aws_key_pair" "Docker" {
 
   # Download keypair pem file to keypair path on local
   provisioner "local-exec" {
-    command = "echo '${tls_private_key.private_key.private_key_pem}' > ${var.keypair_path}/${var.key_name}.pem" #; chmod 400 ${var.keypair_path}/${var.key_name}.pem"
+    command = "echo '${tls_private_key.private_key.private_key_pem}' > ${var.keypair_path}\\${var.key_name}.pem" #; chmod 400 ${var.keypair_path}/${var.key_name}.pem"
     interpreter = ["PowerShell", "-Command"]
   }
   tags = var.tags
