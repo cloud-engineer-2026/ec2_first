@@ -12,7 +12,7 @@ variable "region_name" {
   description = "Region to create the resources"
   type        = string
 }
-/* variable "key_name" {
+variable "key_name" {
   key-name    = "Docker"
   type        = string
   description = "KeyPair used by EC2"
@@ -24,4 +24,4 @@ variable "keypair_path" {
   default     = "/CloudEngineer2026/moses"
   description = "KeyPair downloaded path"
 }
-*/
+
