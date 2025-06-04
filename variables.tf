@@ -3,7 +3,7 @@ variable "ec2_instance_type" {
   type        = string
 }
 
-variable "ec2_image" {
+variable "ami" {
   description = "EC2 image for the instance"
   type        = string
 }
