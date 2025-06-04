@@ -15,7 +15,7 @@ variable "region_name" {
 variable "key_name" {
   type        = string
   description = "KeyPair used by EC2"
-  name    = "Docker.pem"
+  
 }
 
 variable "keypair_path" {
