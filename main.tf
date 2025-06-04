@@ -13,7 +13,7 @@ resource "aws_key_pair" "ec2_key" {
 # Save private key to local file (for SSH access)
 resource "local_file" "private_key" {
   content              = tls_private_key.ec2_key.private_key_pem
-  filename             = "/F:/CloudEngineer2026/moses/my-ec2-key.pem"
+  filename             = "F:\\CloudEngineer2026\\moses\\my-ec2-key.pem"
   file_permission      = "0600"
 }
 
