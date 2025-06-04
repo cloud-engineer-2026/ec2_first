@@ -20,6 +20,6 @@ variable "key_name" {
 
 variable "keypair_path" {
   type        = string
-  default     = "/Users/MMV0616/moses"
+  default     = "/CloudEngineer2026/moses"
   description = "KeyPair downloaded path"
 }
