@@ -1,20 +1,13 @@
-# Generate SSH key pair locally
-resource "tls_private_key" "ec2_key" {
-  algorithm = "RSA"
-  rsa_bits  = 4096
-}
+resource "aws_key_pair" "jenkins_keypair" {
+  key_name   = var.key_name
+  public_key = tls_private_key.private_key.public_key_openssh
 
-# Create key pair in AWS using the public key
-resource "aws_key_pair" "ec2_key" {
-  key_name   = "my-ec2-key"
-  public_key = tls_private_key.ec2_key.public_key_openssh
-}
-
-# Save private key to local file (for SSH access)
-resource "local_file" "private_key" {
-  content              = tls_private_key.ec2_key.private_key_pem
-  filename             = "F:\\CloudEngineer2026\\moses\\my-ec2-key.pem"
-  file_permission      = "0600"
+  # Download keypair pem file to keypair path on local
+  provisioner "local-exec" {
+    command = "echo '${tls_private_key.private_key.private_key_pem}' > ${var.keypair_path}/${var.key_name}.pem" #; chmod 400 ${var.keypair_path}/${var.key_name}.pem"
+    interpreter = ["PowerShell", "-Command"]
+  }
+  tags = var.tags
 }
 
 resource "aws_instance" "Docker_Instance" {
