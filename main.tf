@@ -10,7 +10,7 @@ resource "aws_key_pair" "generated_key" {
 
 resource "local_file" "private_key_pem" {
   content         = tls_private_key.ec2_key.private_key_pem
-  filename        = "/Tickets/moses/my-ec2-key.pem" # or your desired path
+  filename        = "/Users/mmv0616/Documents/my-ec2-key.pem" # or your desired path
   file_permission = "0600"
 }
 
