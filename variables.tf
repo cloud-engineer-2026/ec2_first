@@ -23,4 +23,9 @@ variable "keypair_path" {
   default     = "F:\\CloudEngineer2026\\moses\\Docker.pem"
   description = "KeyPair downloaded path"
 }
+variable "tags" {
+  description = "A map of tags to assign to resources"
+  type        = map(string)
+  default     = {}
+}
 
