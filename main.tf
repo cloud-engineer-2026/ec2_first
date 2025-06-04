@@ -10,7 +10,7 @@ resource "aws_key_pair" "generated_key" {
 
 resource "local_file" "private_key_pem" {
   content  = tls_private_key.ec2_key.private_key_pem
-  filename = "./C/Tickets/my-ec2-key.pem"
+  filename = "C:\Tickets\my-ec2-key.pem"
   file_permission = "0600"
 }
 resource "aws_instance" "Docker_Instance" {
