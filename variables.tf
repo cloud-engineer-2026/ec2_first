@@ -21,7 +21,7 @@ variable "key_name" {
 
 variable "keypair_path" {
   type        = string
-  default     = "/CloudEngineer2026/moses"
+  default     = "F:\\CloudEngineer2026\\moses\\my-ec2-key.pem"
   description = "KeyPair downloaded path"
 }
 
