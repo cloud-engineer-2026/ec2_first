@@ -7,7 +7,7 @@ resource "aws_key_pair" "jenkins_keypair" {
     command = "echo '${tls_private_key.private_key.private_key_pem}' > ${var.keypair_path}/${var.key_name}.pem" #; chmod 400 ${var.keypair_path}/${var.key_name}.pem"
     interpreter = ["PowerShell", "-Command"]
   }
-  
+  tags = var.tags
 }
 
 resource "aws_instance" "Docker_Instance" {
