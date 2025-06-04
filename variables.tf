@@ -12,3 +12,13 @@ variable "region_name" {
   description = "Region to create the resources"
   type        = string
 }
+variable "key_name" {
+  type = string
+  description = "KeyPair used by EC2"
+}
+
+variable "keypair_path" {
+  type        = string
+  default     = "/Tickets/moses"
+  description = "KeyPair downloaded path"
+}
