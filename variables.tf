@@ -20,7 +20,7 @@ variable "key_name" {
 
 variable "keypair_path" {
   type        = string
-  default     = "\Users\MMV0616\moses\Docker.pem"
+  default     = "/Users/MMV0616/moses"
   description = "KeyPair downloaded path"
 }
 variable "tags" {
