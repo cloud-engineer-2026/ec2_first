@@ -17,6 +17,7 @@ resource "aws_key_pair" "Docker" {
 resource "aws_instance" "Docker_Instance" {
   instance_type = var.ec2_instance_type
   ami           = var.ami
+  key_name   = var.key_name
   tags = {
     Name = "DockerInstance"
   }
